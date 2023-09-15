@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>xWhatsapp</title>
     <style>
+        :root {
+            --background-color: #111; /* Dark background color */
+            --text-color: #fff; /* Light text color */
+        }
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f4f4f4;
+            background-color: var(--background-color); /* Use the dark background color */
+            color: var(--text-color); /* Use the light text color */
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
         }
 
         header {
@@ -66,10 +73,21 @@
             background-color: #0056b3;
         }
 
-        /* Adjust the note style */
+        /* Adjusted note style */
         .note {
-            font-size: 14px; /* Smaller font size */
-            color: #888; /* Gray color */
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Dark mode toggle button */
+        .dark-mode-button {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -87,32 +105,50 @@
                 <a href="https://www.mediafire.com/file/8dzw09mojc8o3r9/beta+v1.apk/file" target="_blank">
                     <img src="https://i.ibb.co/y54SMXy/whatsapp-aero.png" alt="Version 1 Icon" class="version-icon">
                 </a>
-                <h3>Package 1</h3>
+                <h3>Version 1</h3>
                 <!-- Adjusted note style -->
                 <p class="note">Note: You have to delete the main WhatsApp version to install this.</p>
-                <a href="https://www.mediafire.com/file/8dzw09mojc8o3r9/beta+v1.apk/file" class="download-button" target="_blank">Download Package 1</a>
+                <a href="https://www.mediafire.com/file/8dzw09mojc8o3r9/beta+v1.apk/file" class="download-button" target="_blank">Download Version 1</a>
             </li>
             
             <li class="download-version" id="version2">
                 <a href="link_to_version_2.apk">
                     <img src="https://i.ibb.co/y54SMXy/whatsapp-aero.png" alt="Version 2 Icon" class="version-icon">
                 </a>
-                <h3>Package 2</h3>
+                <h3>Version 2</h3>
                 <!-- Adjusted note style -->
                 <p class="note">Note: You don't have to delete the main WhatsApp version to install this.</p>
-                <a href="link_to_version_2.apk" class="download-button" target="_blank">Download Package 2</a>
+                <a href="link_to_version_2.apk" class="download-button" target="_blank">Download Version 2</a>
             </li>
 
             <li class="download-version" id="version3">
                 <a href="link_to_version_3.apk">
                     <img src="https://i.ibb.co/y54SMXy/whatsapp-aero.png" alt="Version 3 Icon" class="version-icon">
                 </a>
-                <h3>Package 3</h3>
+                <h3>Version 3</h3>
                 <!-- Adjusted note style -->
                 <p class="note">Note: You don't have to delete the main WhatsApp version to install this.</p>
-                <a href="link_to_version_3.apk" class="download-button" target="_blank">Download Package 3</a>
+                <a href="link_to_version_3.apk" class="download-button" target="_blank">Download Version 3</a>
             </li>
         </ul>
+
+        <!-- Dark mode toggle button -->
+        <button class="dark-mode-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </div>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const isDarkMode = getComputedStyle(body).backgroundColor === 'rgb(17, 17, 17)';
+
+            if (isDarkMode) {
+                body.style.setProperty('--background-color', '#fff');
+                body.style.setProperty('--text-color', '#000');
+            } else {
+                body.style.setProperty('--background-color', '#111');
+                body.style.setProperty('--text-color', '#fff');
+            }
+        }
+    </script>
 </body>
 </html>
