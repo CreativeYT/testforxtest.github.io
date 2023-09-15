@@ -31,7 +31,7 @@
         }
 
         h3 {
-            color:var(--text-color);
+            color: var(--text-color);
         }
 
         .container {
@@ -108,6 +108,25 @@
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
         }
+
+        /* Telegram button */
+        .telegram-button {
+            background-color: #0088cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 50%; /* Make the button circular */
+            width: 50px; /* Set the width to 50px */
+            height: 50px; /* Set the height to 50px */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            margin-top: 20px;
+        }
+
+        .telegram-icon {
+            width: 30px;
+            height: 30px;
+        }
     </style>
 </head>
 <body>
@@ -153,6 +172,11 @@
 
         <!-- Dark mode toggle button -->
         <img src="https://andrewchallis.co.uk/img/night-mode.png" alt="Dark Mode Icon" class="dark-mode-icon" onclick="toggleDarkMode()">
+
+        <!-- Telegram button -->
+        <a href="https://www.t.me/xformods" target="_blank" class="telegram-button">
+            <img src="https://pluspng.com/img-png/telegram-logo-png-telegram-app-icon-png-50-px-1600.png" alt="Telegram Logo" class="telegram-icon">
+        </a>
     </div>
 
     <script>
