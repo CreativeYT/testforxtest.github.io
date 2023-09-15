@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xWhatsapp</title>
+    <style>
+        /* Light mode styles */
+        :root {
+            --background-color-light: #fff;
+            --text-color-light: #000;
+        }
+
+        /* Dark mode styles */
+        :root[data-theme='dark'] {
+            --background-color-dark: #111;
+            --text-color-dark: #fff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: var(--background-color-light);
+            color: var(--text-color-light);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .download-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .download-version {
+            flex: 1;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .version-icon {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+
+        .download-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Adjusted note style */
+        .note {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Dark mode icon */
+        .dark-mode-icon {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://i.ibb.co/mbNDHxk/Picsart-23-09-15-04-17-11-932.png" alt="xWhatsapp Logo" width="150" height="150">
+        <h1>xWhatsapp</h1>
+        <p>Your WhatsApp Alternative</p>
+    </header>
+
+    <div class="container">
+        <h2>Download xWhatsapp</h2>
+        <ul class="download-container">
+            <li class="download-version" id="version1">
+                <a href="https://www.mediafire.com/file/8dzw09mojc8o3r9/beta+v1.apk/file" target="_blank">
+                    <img src="https://i.ibb.co/y54SMXy/whatsapp-aero.png" alt="Version 1 Icon" class="version-icon">
+                </a>
+                <h3>Version 1</h3>
+                <p class="note">Note: You have to delete the main WhatsApp version to install this.</p>
+                <a href="https://www.mediafire.com/file/8dzw09mojc8o3r9/beta+v1.apk/file" class="download-button" target="_blank">Download Version 1</a>
+            </li>
+            
+            <li class="download-version" id="version2">
+                <a href="link_to_version_2.apk">
+                    <img src="https://i.ibb.co/y54SMXy/whatsapp-aero.png" alt="Version 2 Icon" class="version-icon">
+                </a>
+                <h3>Version 2</h3>
+                <p class="note">Note: You don't have to delete the main WhatsApp version to install this.</p>
+                <a href="link_to_version_2.apk" class="download-button" target="_blank">Download Version 2</a>
+            </li>
+
+            <li class="download-version" id="version3">
+                <a href="link_to_version_3.apk">
+                    <img src="https://i.ibb.co/y54SMXy/whatsapp-aero.png" alt="Version 3 Icon" class="version-icon">
+                </a>
+                <h3>Version 3</h3>
+                <p class="note">Note: You don't have to delete the main WhatsApp version to install this.</p>
+                <a href="link_to_version_3.apk" class="download-button" target="_blank">Download Version 3</a>
+            </li>
+        </ul>
+
+        <!-- Dark mode icon -->
+        <img src="https://andrewchallis.co.uk/img/night-mode.png" alt="Dark Mode Icon" class="dark-mode-icon" onclick="toggleDarkMode()">
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const isDarkMode = body.getAttribute('data-theme') === 'dark';
+
+            if (isDarkMode) {
+                body.removeAttribute('data-theme');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+            }
+        }
+    </script>
+</body>
+</html>
