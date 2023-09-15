@@ -31,15 +31,18 @@
         }
 
         h3 {
-            color:var(--text-color);
+            color: var(--text-color);
         }
 
         .container {
             padding: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .download-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             gap: 20px;
             list-style: none;
@@ -56,8 +59,8 @@
         }
 
         .version-icon {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             margin-bottom: 10px;
         }
 
@@ -73,11 +76,6 @@
             margin-top: 20px;
         }
 
-        .download-button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Adjusted note style */
         .note {
             font-size: 14px;
             color: #888;
@@ -93,6 +91,7 @@
             border-radius: 5px;
             margin-top: 20px;
         }
+
         .dark-mode-icon {
             width: 30px;
             height: 30px;
@@ -102,6 +101,36 @@
             background-color: #007BFF;
             color: white;
             padding: 5px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 5px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .version-icon {
+                width: 75px;
+                height: 75px;
+            }
+
+            .download-button {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .dark-mode-icon {
+                width: 25px;
+                height: 25px;
+                top: 10px;
+                right: 10px;
+            }
         }
     </style>
 </head>
@@ -120,17 +149,15 @@
                     <img src="https://i.ibb.co/y54SMXy/whatsapp-aero.png" alt="Version 1 Icon" class="version-icon">
                 </a>
                 <h3>Package 1</h3>
-                <!-- Adjusted note style -->
                 <p class="note">Note: You have to delete the main WhatsApp version to install this.</p>
                 <a href="https://www.mediafire.com/file/8dzw09mojc8o3r9/beta+v1.apk/file" class="download-button" target="_blank">Download Version 1</a>
             </li>
-            
+
             <li class="download-version" id="version2">
                 <a href="link_to_version_2.apk">
                     <img src="https://i.ibb.co/y54SMXy/whatsapp-aero.png" alt="Version 2 Icon" class="version-icon">
                 </a>
                 <h3>Package 2</h3>
-                <!-- Adjusted note style -->
                 <p class="note">Note: You don't have to delete the main WhatsApp version to install this.</p>
                 <a href="link_to_version_2.apk" class="download-button" target="_blank">Download Version 2</a>
             </li>
@@ -140,15 +167,14 @@
                     <img src="https://i.ibb.co/y54SMXy/whatsapp-aero.png" alt="Version 3 Icon" class="version-icon">
                 </a>
                 <h3>Package 3</h3>
-                <!-- Adjusted note style -->
                 <p class="note">Note: You don't have to delete the main WhatsApp version to install this.</p>
                 <a href="link_to_version_3.apk" class="download-button" target="_blank">Download Version 3</a>
             </li>
         </ul>
-
-        <!-- Dark mode toggle button -->
-        <img src="https://andrewchallis.co.uk/img/night-mode.png" alt="Dark Mode Icon" class="dark-mode-icon" onclick="toggleDarkMode()">
     </div>
+
+    <!-- Dark mode toggle button -->
+    <img src="https://andrewchallis.co.uk/img/night-mode.png" alt="Dark Mode Icon" class="dark-mode-icon" onclick="toggleDarkMode()">
 
     <script>
         function toggleDarkMode() {
