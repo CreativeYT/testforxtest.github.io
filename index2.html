@@ -6,7 +6,7 @@
     <title>xWhatsapp</title>
     <style>
         /* Light mode styles */
-        :root {
+        :root:not([data-theme='dark']) {
             --background-color-light: #fff;
             --text-color-light: #000;
         }
@@ -146,9 +146,7 @@
     <script>
         function toggleDarkMode() {
             const body = document.body;
-            const isDarkMode = body.getAttribute('data-theme') === 'dark';
-
-            if (isDarkMode) {
+            if (body.getAttribute('data-theme') === 'dark') {
                 body.removeAttribute('data-theme');
             } else {
                 body.setAttribute('data-theme', 'dark');
