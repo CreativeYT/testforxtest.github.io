@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>xWhatsapp</title>
+    <!-- Add meta tags for better mobile compatibility -->
+    <meta name="description" content="xWhatsapp - Your WhatsApp Alternative">
+    <meta name="keywords" content="xWhatsapp, WhatsApp Alternative, WhatsApp Clone">
+    <meta name="author" content="Your Name">
+
     <style>
-        :root {
-            --background-color: #111; /* Dark background color */
-            --text-color: #fff; /* Light text color */
-            --button-size: 50px; /* Common button size */
+        /* Light mode styles */
+        :root:not([data-theme='dark']) {
+            --background-color-light: #fff;
+            --text-color-light: #000;
+        }
+
+        /* Dark mode styles */
+        :root[data-theme='dark'] {
+            --background-color-dark: #111;
+            --text-color-dark: #fff;
         }
 
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: var(--background-color); /* Use the dark background color */
-            color: var(--text-color); /* Use the light text color */
+            background-color: var(--background-color-light);
+            color: var(--text-color-light);
             margin: 0;
             padding: 0;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
@@ -31,15 +42,8 @@
             margin: 0;
         }
 
-        h3 {
-            color: var(--text-color);
-        }
-
         .container {
             padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .download-container {
@@ -52,8 +56,8 @@
 
         .download-version {
             flex: 1;
-            background-color: var(--background-color);
-            border: 2px solid #fff;
+            background-color: #fff;
+            border: 1px solid #ccc;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
@@ -63,6 +67,8 @@
             width: 150px;
             height: 150px;
             margin-bottom: 10px;
+            border-radius: 50%; /* Make the icon circular */
+            overflow: hidden;
         }
 
         .download-button {
@@ -70,11 +76,11 @@
             color: white;
             padding: 15px;
             text-decoration: none;
-            border-radius: 50%; /* Make the button circular */
-            width: var(--button-size);
-            height: var(--button-size);
+            border-radius: 25px;
             cursor: pointer;
             transition: background-color 0.3s;
+            display: block;
+            margin-top: 20px;
         }
 
         .download-button:hover {
@@ -87,50 +93,33 @@
             color: #888;
         }
 
-        /* Dark mode toggle button */
-        .dark-mode-button {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            border: none;
-            cursor: pointer;
-            padding: 15px;
-            text-decoration: none;
-            border-radius: 50%; /* Make the button circular */
-            width: var(--button-size);
-            height: var(--button-size);
+        /* Dark mode and Telegram buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
             margin-top: 20px;
+        }
+
+        .dark-mode-icon,
+        .telegram-button {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            border-radius: 50%; /* Make the icon circular */
+            padding: 5px;
         }
 
         .dark-mode-icon {
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            border-radius: 50%;
             background-color: #007BFF;
             color: white;
-            padding: 5px;
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
         }
 
-        /* Telegram button */
         .telegram-button {
-            background-color: #0088cc;
-            color: white;
-            text-decoration: none;
-            border-radius: 50%; /* Make the button circular */
-            width: var(--button-size);
-            height: var(--button-size);
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            margin-top: 20px;
-        }
-
-        .telegram-icon {
-            width: 30px;
-            height: 30px;
+            background-color: #007BFF;
+            background-image: url('https://pluspng.com/img-png/telegram-logo-png-telegram-app-icon-png-50-px-1600.png');
+            background-size: cover;
         }
     </style>
 </head>
@@ -149,7 +138,6 @@
                     <img src="https://i.ibb.co/y54SMXy/whatsapp-aero.png" alt="Version 1 Icon" class="version-icon">
                 </a>
                 <h3>Version 1</h3>
-                <!-- Adjusted note style -->
                 <p class="note">Note: You have to delete the main WhatsApp version to install this.</p>
                 <a href="https://www.mediafire.com/file/8dzw09mojc8o3r9/beta+v1.apk/file" class="download-button" target="_blank">Download Version 1</a>
             </li>
@@ -159,7 +147,6 @@
                     <img src="https://i.ibb.co/y54SMXy/whatsapp-aero.png" alt="Version 2 Icon" class="version-icon">
                 </a>
                 <h3>Version 2</h3>
-                <!-- Adjusted note style -->
                 <p class="note">Note: You don't have to delete the main WhatsApp version to install this.</p>
                 <a href="link_to_version_2.apk" class="download-button" target="_blank">Download Version 2</a>
             </li>
@@ -169,32 +156,28 @@
                     <img src="https://i.ibb.co/y54SMXy/whatsapp-aero.png" alt="Version 3 Icon" class="version-icon">
                 </a>
                 <h3>Version 3</h3>
-                <!-- Adjusted note style -->
                 <p class="note">Note: You don't have to delete the main WhatsApp version to install this.</p>
                 <a href="link_to_version_3.apk" class="download-button" target="_blank">Download Version 3</a>
             </li>
         </ul>
 
-        <!-- Dark mode toggle button -->
-        <img src="https://andrewchallis.co.uk/img/night-mode.png" alt="Dark Mode Icon" class="dark-mode-icon" onclick="toggleDarkMode()">
-
-        <!-- Telegram button -->
-        <a href="https://www.t.me/xformods" target="_blank" class="telegram-button">
-            <img src="https://pluspng.com/img-png/telegram-logo-png-telegram-app-icon-png-50-px-1600.png" alt="Telegram Logo" class="telegram-icon">
-        </a>
+        <!-- Action buttons (Dark mode and Telegram) -->
+        <div class="action-buttons">
+            <!-- Dark mode icon -->
+            <div class="dark-mode-icon" onclick="toggleDarkMode()"></div>
+            
+            <!-- Telegram button -->
+            <a href="https://t.me/xformods" class="telegram-button" target="_blank"></a>
+        </div>
     </div>
 
     <script>
         function toggleDarkMode() {
             const body = document.body;
-            const isDarkMode = getComputedStyle(body).backgroundColor === 'rgb(17, 17, 17)';
-
-            if (isDarkMode) {
-                body.style.setProperty('--background-color', '#fff');
-                body.style.setProperty('--text-color', '#000');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
             } else {
-                body.style.setProperty('--background-color', '#111');
-                body.style.setProperty('--text-color', '#fff');
+                body.setAttribute('data-theme', 'dark');
             }
         }
     </script>
